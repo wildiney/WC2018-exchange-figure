@@ -1,7 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
+            <nav class="navbar fixed-bottom navbar-dark bg-dark footer">
+                <p class="mx-auto">&copy <?php echo date('Y')?> - <a  href="http://www.indracompany.com">indracompany.com</a></p>
+            </nav>
         </div>
+        
         <!--script src="js/vendor/modernizr-3.5.0.min.js"></script-->
         
 

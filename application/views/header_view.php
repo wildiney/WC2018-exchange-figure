@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -15,8 +15,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="<?php echo base_url('vendor/twbs/bootstrap/dist/css/bootstrap.min.css');?>">
-        <link rel="stylesheet" href="<?php echo base_url('vendor/components/font-awesome/css/font-awesome.min.css');?>">
+        <!--link rel="stylesheet" href="<?php echo base_url('vendor/components/font-awesome/css/font-awesome.min.css');?>"-->
         <link rel="stylesheet" href="<?php echo base_url('assets/css/layout.css');?>">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/solid.css" integrity="sha384-HTDlLIcgXajNzMJv5hiW5s2fwegQng6Hi+fN6t5VAcwO/9qbg2YEANIyKBlqLsiT" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/fontawesome.css" integrity="sha384-8WwquHbb2jqa7gKWSoAwbJBV2Q+/rQRss9UXL5wlvXOZfSodONmVnifo/+5xJIWX" crossorigin="anonymous">
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
@@ -31,14 +33,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">TROCA DE FIGURINHAS NA INDRA</a>
+            <div class="header"></div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#"><img src="<?php echo base_url('assets/img/logo.png')?>"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <?php if ($this->session->logged == true): ?>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <?php if($this->session->userdata("logged")): ?>
                     <ul class="navbar-nav mr-auto">
                         <!--li class="nav-item active">
                             <a class="nav-link" href="<?php echo base_url('figurinhas/trocadores'); ?>">INÍCIO <span class="sr-only">(current)</span></a>
@@ -46,25 +49,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url('figurinhas/trocadores'); ?>">QUEM QUER TROCAR?</a>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="img-profile-wrapper">
-                                    <img class="img-profile" width="40" src="<?php echo base_url('assets/users/') . str_replace(array('@indracompany.com'),"", $this->session->userdata('email')) . "_MThumb.jpg"?>">
-                                </span>
-                                <?php echo $this->session->userdata("nome") ?>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?php echo base_url("figurinhas/repetidas")?>">FIGURINHAS REPETIDAS</a>
-                                <a class="dropdown-item" href="<?php echo base_url("figurinhas/procurando")?>">FIGURINHAS QUE PRECISO</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?php echo base_url('login/logout')?>">LOGOUT</a>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('figurinhas/repetidas'); ?>">MINHAS REPETIDAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url("figurinhas/procurando")?>">FIGURINHAS QUE PRECISO</a>
                         </li>
                     </ul>
-                    <?php endif;?>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('login/logout')?>">
+                                <span class="img-profile-wrapper">
+                                    <img  class="img-profile" width="40" src="<?php echo base_url('assets/users/') . str_replace(array('@indracompany.com'), "", $this->session->userdata('email')) . "_MThumb.jpg"?>" onError="this.onerror=null;this.src='/assets/users/user.jpg';">
+                                </span> 
+                                <?php echo substr($this->session->userdata("nome"),0,10) ?>... | LOGOUT</a>
+                        </li>
+                    </ul>
                 </div>
+                <?php endif;?>
             </nav>
         </div>
-        <div class="container spacer-20">
+        <div class="container-fluid spacer-20">

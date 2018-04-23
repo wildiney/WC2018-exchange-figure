@@ -1,8 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, X-Auth-Token');
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+use \Firebase\JWT\JWT;
 
 class Figurinhas extends CI_Controller {
 	protected $user;
+	protected $key = "chavedeacesso";
 	protected $numOfCards = 640;
 	protected $myCards = [];
 	protected $matricula = "";
@@ -12,16 +21,18 @@ class Figurinhas extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
+
 		if(!$this->session->userdata("logged")){
-			redirect("/","refresh");
+			redirect(base_url('login'));
 		}
+
 		$this->matricula = $this->session->userdata("matricula");
 
 	}
-
+	
 	public function profile(){
 		$this->load->view('header_view',$this->header);
-		#$this->load->view('exchangers_view',$data);
+		$this->load->view('profile_view');
 		$this->load->view('footer_view');
 	}
 
@@ -74,6 +85,30 @@ class Figurinhas extends CI_Controller {
 		$this->load->view('header_view');
 		$this->load->view('looking_for',$data);
 		$this->load->view('footer_view');
+	}
+	
+	public function getLookingForCards($matricula){
+		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, X-Auth-Token');
+		header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+		header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+		header("Cache-Control: post-check=0, pre-check=0", false);
+		header("Pragma: no-cache");
+		
+		$this->load->model("cards_model");
+		$cards = $this->cards_model->wanted_cards($matricula);
+		$data['cards'] = array("wanted_cards"=>explode(",",$cards->wanted_cards));
+		
+		$key = $this->key;
+        $token = array(
+            "iss" => "trocafigurinhas",
+            "iat" => time(),
+            "data"=>$data['cards']
+        );
+		$json = json_encode($data['cards']);
+		echo $json;
+        #$jwt = JWT::encode($token, $key);
+        #echo $jwt;
 	}
 
 	public function repetidas_da($name)

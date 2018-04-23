@@ -1,4 +1,6 @@
 .DS_Store
+.php_cs.cache
+.vscode
 
 application/cache/*
 !application/cache/index.html
@@ -29,3 +31,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+/assets/img/users/

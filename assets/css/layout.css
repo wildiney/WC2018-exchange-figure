@@ -1,17 +1,49 @@
+@import "animations.css";
+@import "fonts.css";
+@import "header.css";
+@import "cards.css";
 /*****************************************/
 
 /* MAIN STYLES                           */
 
 /*****************************************/
+
+/* TEMPLATE BASICS */
+
+body {
+  padding-top: 55px;
+  padding-bottom: 75px;
+  scroll-behavior: smooth;
+}
+
+.bg-dark{
+  background-color: black !important;
+}
 h2 {
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-family: 'neosansmedium';
+  font-size: 28px;
+  text-align: center;
+  color: #2196F3;
+}
+
+h2 .bigger {
+  font-size: 40px;
+  color: #b5bf00;
+}
+
+h3 {
+  font-family: 'neosansmedium';
   text-transform: uppercase;
 }
 
-.exchanger {
-  border: 1px solid gray;
-  padding: 10px;
-  margin-top: 20px;
+.gray {
+  color: #b5bf00;
 }
+
+
+/* BOOTSTRAP OVERWRITE */
 
 .navbar-brand {
   font-weight: bold;
@@ -20,6 +52,8 @@ h2 {
 .spacer-20 {
   padding-top: 20px;
 }
+
+/* HEADER  */
 
 .img-profile-wrapper {
   position: relative;
@@ -38,127 +72,97 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.lista-de-figurinhas{
-  padding:20px;
-  border-radius: 10px;
-  height:25%; 
-  overflow-y:auto; 
-  border:1px solid gray;
-  margin-bottom: 20px;
-}
-
-/*****************************************/
-
-/* CHECKBOX CUSTOMIZADOS                 */
-
-/*****************************************/
-
-/* Customize the label (the container) */
-
-.wrapper-card {
-  display: inline-block;
-  position: relative;
-  width: 40px;
-  height: 55px;
-  padding-left: 0px;
-  margin: 0 8px 8px 0;
-  cursor: pointer;
-  font-size: 19px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid gray;
-}
-
-.card-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: gray;
-  width: 100%;
-  height: 100%;
-}
-
-/* Hide the browser's default checkbox */
-
-.wrapper-card input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* Create a custom checkbox */
-
-.checkmark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.6em;
-  font-weight: bold;
-}
-
-/* On mouse-over, add a grey background color */
-
-.wrapper-card:hover input~.checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-
-.wrapper-card input:checked~.card-background {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-
-.card-background:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-
-.wrapper-card input:checked~.card-background:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-
-.wrapper-card .card-background:after {
-  left: 18px;
-  top: 40px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 .title {
   text-transform: uppercase;
 }
 
-.mini-cards {
-  display: inline-block;
-  position: relative;
-  width: 30px;
-  height: 45px;
-  padding-left: 0px;
-  margin: 0 8px 8px 0;
-  cursor: pointer;
-  font-size: 20px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid gray;
+.panel-title {
+  text-align: center;
+  background-color: #b5bf00;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 0;
+  margin-bottom: 0;
+  border: 1px solid #b5bf00;
+  border-collapse: collapse
 }
 
-.mini-cards-wanted {
-  background-color: gray;
+.panel-body {
+  border: 1px solid #b5bf00;
+  border-top: none;
+  border-bottom: none;
+  padding: 10px 20px;
+  border-collapse: collapse
+}
+
+.panel-footer {
+  background-color: #b5bf00;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #b5bf00;
+  border-collapse: collapse;
+  height: 20px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #b5bf00;
+  border-color: #b5bf00;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #ffa200;
+  border-color: #ffa200;
+}
+
+.footer {
+  color: white;
+}
+
+.footer a {
+  color: white;
+}
+
+#btn-trocar {
+  position: fixed;
+  bottom: 55px;
+  width: 100%;
+  margin-left: -15px;
+  border-radius: 0;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+  h2 {
+    text-align: left;
+  }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+  
+  #btn-trocar {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0.3rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+  h2 {
+    text-align: left;
+  }
 }

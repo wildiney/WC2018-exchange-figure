@@ -22,7 +22,7 @@ class Cards_model extends CI_Model{
     }
 
     public function wanted_cards($matricula){
-        $this->db->select('cards.wanted_cards, cards.matricula');
+        $this->db->select('cards.wanted_cards');
         $this->db->from('cards');
         $this->db->where('cards.matricula',$matricula);
         $query = $this->db->get();

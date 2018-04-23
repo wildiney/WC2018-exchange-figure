@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'neosansmedium';
+    src: url('../fonts/neosans-medium-webfont.eot');
+    src: url('../fonts/neosans-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosans-medium-webfont.woff2') format('woff2'), url('../fonts/neosans-medium-webfont.woff') format('woff'), url('../fonts/neosans-medium-webfont.ttf') format('truetype'), url('../fonts/neosans-medium-webfont.svg#neosansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
