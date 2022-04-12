@@ -1,4 +1,4 @@
-# WC-QUIZ
+# WC-EXCHANGE-FIGURE
 
 ![No Maintenance Intended](https://img.shields.io/badge/No%20Maintenance%20Intended-%E2%9C%95-red.svg?style=for-the-badge)
 
@@ -9,8 +9,9 @@
 
 Released in 2014
 
-This is part of an incentive campaing from a company. People that answers with less time wins.
+This is a MVP project to exchange futebol figures beetween employees. 
 
 ## Screenshots
 
 ![screenshots](https://github.com/wildiney/WC2018-exchange-figure/blob/master/screenshots/screenshot-01.png)
+![screenshots](https://github.com/wildiney/WC2018-exchange-figure/blob/master/screenshots/screenshot-02.png)
