@@ -13,4 +13,4 @@ This is part of an incentive campaing from a company. People that answers with l
 
 ## Screenshots
 
-![screenshots](https://github.com/wildiney/WC2018-quiz/blob/master/screenshots/screenshot-01.png)
+![screenshots](https://github.com/wildiney/WC2018-exchange-figure/blob/master/screenshots/screenshot-01.png)
