@@ -32,3 +32,8 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/tests/
 /tests/results/
 /assets/img/users/
+
+application/config/development/
+application/config/production/
+ci_sessions
+*.env

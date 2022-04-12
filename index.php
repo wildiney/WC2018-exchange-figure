@@ -55,6 +55,11 @@
  */
 	define('ENVIRONMENT', 'development');
 
+
+if( ! ini_get('date.timezone') )
+{
+   date_default_timezone_set('GMT');
+} 
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

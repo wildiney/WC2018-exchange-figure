@@ -9,15 +9,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="lista-de-figurinhas repetidas">
                 <div class="row">
                     <div class="col-md-12 clearfix">
-                        <?php if(!is_null($cards)){ $repeated_cards = explode(',',$cards->repeated_cards); } else {$repeated_cards=[];} ?>
-                        <?php for($i=1; $i<641;$i++):?>
-                            <?php $checked = (in_array($i,$repeated_cards))?" checked='checked'":""; ?>
-                            <label class='wrapper-card <?php echo "fig".$i?>'><input type='checkbox' name="repetidas[]" value="<?php echo $i;?>" <?php echo $checked; ?>>
+                        <?php if (!is_null($cards)) {
+                            $repeated_cards = explode(',', $cards->repeated_cards);
+                        } else {
+                            $repeated_cards = [];
+                        } ?>
+                        <?php for ($i = 1; $i < 641; $i++): ?>
+                            <?php $checked = (in_array($i, $repeated_cards)) ? " checked='checked'" : ""; ?>
+                            <label class='wrapper-card <?php echo "fig" . $i ?>'><input type='checkbox' name="repetidas[]" value="<?php echo $i; ?>" <?php echo $checked; ?>>
                                 <div class='card-background'>
                                     <span class='checkmark'><?php echo $i; ?></span>
                                 </div>
                             </label>
-                        <?php endfor;?>
+                        <?php endfor; ?>
                     </div>
                 </div>
             </div>
