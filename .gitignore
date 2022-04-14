@@ -37,3 +37,4 @@ application/config/development/
 application/config/production/
 ci_sessions
 *.env
+data
