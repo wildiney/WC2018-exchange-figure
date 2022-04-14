@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
         <nav class="navbar fixed-bottom navbar-dark bg-dark footer">
-            <p class="mx-auto">&copy <?php echo date('Y') ?> - <a  href="http://www.indracompany.com">indracompany.com</a></p>
+            <p class="mx-auto">&copy 2018 - <a  href="http://www.empresa.com">empresa.com</a></p>
         </nav>
     </div>
 

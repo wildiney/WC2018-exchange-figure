@@ -25,12 +25,14 @@ services:
     image: mysql:5.7
     env_file:
       - ./env/mysql.env
-  # composer:
-  #   build:
-  #     context: .
-  #     dockerfile: dockerfiles/composer/Dockerfile
-  #   volumes:
-  #     - ./:/var/www/html
+    volumes:
+      - ./data/figurinhas.sql:/docker-entrypoint-initdb.d/figurinhas.sql
+  composer:
+    build:
+      context: .
+      dockerfile: dockerfiles/composer/Dockerfile
+    volumes:
+      - ./:/var/www/html
   # npm:
   #   image: node:14
   #   working_dir: /var/www/html

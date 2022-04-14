@@ -13,7 +13,5 @@ This is a MVP project to exchange futebol figures beetween employees.
 
 ## Screenshots
 
-<div style="text-align:center">
-<img src="https://github.com/wildiney/WC2018-exchange-figure/blob/jwt/screenshots/screenshots-01.png" />
-<img src="https://github.com/wildiney/WC2018-exchange-figure/blob/jwt/screenshots/screenshots-02.png" />
-</div>
+![screenshot](https://github.com/wildiney/WC2018-exchange-figure/blob/master/screenshots/screenshots-03.png)
+![screenshot](https://github.com/wildiney/WC2018-exchange-figure/blob/master/screenshots/screenshots-04.png)
